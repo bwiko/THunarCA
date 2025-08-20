@@ -28,8 +28,10 @@ echo "copy '\\\\ip\\share\\$(echo %N | sed "s/'//g")'" | xclip -selection clipbo
 
 ### smb sharing -windows -password 
 ```
-echo "net use n: \\\\ip\\\share /user:wiwsmb wiwsmb" | xclip -selection clipboard ; x-terminal-emulator -e "sudo impacket-smbserver share -smb2support '%d' -user wiwsmb -password wiwsmb"
+echo "net use n: \\\\ip\\\share /user:wiwsmb wiwsmb && copy 'n:\\$(echo %N | sed "s/'//g")'" | xclip -selection clipboard ; x-terminal-emulator -e "sudo impacket-smbserver share -smb2support '%d' -user wiwsmb -password wiwsmb"
 ```
 
 ### SSH sharing 
-
+```
+echo "scp  %f user@targetip:/tmp/" |  xclip -selection clipboard
+```
