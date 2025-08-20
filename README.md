@@ -23,12 +23,12 @@ this is just a simple custom action that are useful with thunar
 
 ### smb sharing -windows : 
 ```
-echo "copy \"\\\\$(vselector ip)\\share\\$(echo %N | sed "s/'//g")\"" | xclip -selection clipboard ; x-terminal-emulator -e "sudo impacket-smbserver share -smb2support '%d'"
+echo 'copy "\\\\'"$(vselector ip)\\share\\$(echo %N | sed "s/'//g")\"" | xclip -selection clipboard ; x-terminal-emulator -e "sudo impacket-smbserver share -smb2support '%d'"
 ```
 
 ### smb sharing -windows -password 
 ```
-echo "net use n: \\\\$(vselector ip)\\\share /user:wiwsmb wiwsmb && copy \"n:\\$(echo %N | sed "s/'//g")\"" | xclip -selection clipboard ; x-terminal-emulator -e "sudo impacket-smbserver share -smb2support '%d' -user wiwsmb -password wiwsmb"
+echo 'net use n: \\\\'"$(vselector ip)\\\share /user:wiwsmb wiwsmb && copy \"n:\\$(echo %N | sed "s/'//g")\"" | xclip -selection clipboard ; x-terminal-emulator -e "sudo impacket-smbserver share -smb2support '%d' -user wiwsmb -password wiwsmb"
 ```
 
 ### SSH sharing 
